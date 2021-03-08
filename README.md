@@ -57,7 +57,7 @@ from Github and install it with
 Note that you can also add this to your project's `requirements.txt`
 
 ```shell
--e git+https://github.com/a-nau/yaml2pyclass.git@latest
+git+https://github.com/a-nau/yaml2pyclass.git@latest
 ```
 
 ## Usage

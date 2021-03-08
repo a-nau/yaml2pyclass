@@ -1,0 +1,23 @@
+test_int: 10
+test_str: "asdf"
+test_float: 10.1
+test_list: ['test', 'test', 10]
+test_obj1:
+  test_int: 10
+  test_str: "asdf"
+  test_float: 10.1
+  test_list: ['test', 'test', 10]
+  test_obj2:
+    test_int: 10
+    test_str: "asdf"
+    test_float: 10.1
+    test_list: ['test', 'test', 10]
+  test_str_below2: "test"
+  test_obj3:
+    test_int: 10
+    test_str: "asdf"
+    test_float: 10.1
+    test_list: ['test', 'test', 10]
+  test_int_below2: 5
+test_str_below1: "test"
+test_int_below1: 5

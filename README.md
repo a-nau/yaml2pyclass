@@ -1,5 +1,5 @@
 [![build](https://github.com/a-nau/yaml2pyclass/workflows/build/badge.svg)](https://github.com/a-nau/yaml2pyclass/actions)
-[![CI](https://github.com/a-nau/yaml2pyclass/workflows/CI/badge.svg)](https://github.com/a-nau/yaml2pyclass/actions)
+[![test](https://github.com/a-nau/yaml2pyclass/workflows/test/badge.svg)](https://github.com/a-nau/yaml2pyclass/actions)
 
 # yaml2pyclass Code Generator
 

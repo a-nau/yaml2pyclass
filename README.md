@@ -11,7 +11,7 @@ image_size: [ 1280, 960 ]
 cluster_config:
   eps: 0.02
   min_num_samples: 10
-path_output: "./ouput"
+path_output: "./output"
 ```
 
 automatically converts to a Python `class`

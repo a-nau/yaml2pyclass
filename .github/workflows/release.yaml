@@ -24,8 +24,8 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           body: |
-            Initial release
-            - Basic functionality
-            - Basic documentation
+            Upload to PyPI
+            - add upload to PyPI
+            - add pre-commit hooks
           draft: false
           prerelease: true

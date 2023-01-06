@@ -1,7 +1,5 @@
 import io
 import os
-import subprocess
-import sys
 
 import setuptools
 
@@ -11,8 +9,8 @@ DESCRIPTION = "Code generator that produces a Python class from a YAML input fil
               "Can be used to facilitate code completion for config objects. "
 LONG_DESCRIPTION_CONTENT_TYPE = "text/markdown"
 URL = "https://github.com/a-nau/yaml2pyclass"
-EMAIL = "alex.code@mail.com"
-AUTHOR = "Alexander Naumann"
+EMAIL = "alex.code@mail.com, hertlein@fzi.de"
+AUTHOR = "Alexander Naumann, Felix Hertlein"
 REQUIRES_PYTHON = ">=3.7.0"
 
 # Package requirements.

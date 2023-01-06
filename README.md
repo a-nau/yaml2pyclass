@@ -1,4 +1,4 @@
-[![build](https://github.com/a-nau/yaml2pyclass/workflows/pypi_publish/badge.svg)](https://github.com/a-nau/yaml2pyclass/actions)
+[![PyPI](https://github.com/a-nau/yaml2pyclass/actions/workflows/pypi_publish.yml/badge.svg)](https://github.com/a-nau/yaml2pyclass/actions/workflows/pypi_publish.yml)
 [![test](https://github.com/a-nau/yaml2pyclass/workflows/test/badge.svg)](https://github.com/a-nau/yaml2pyclass/actions)
 
 # yaml2pyclass Code Generator

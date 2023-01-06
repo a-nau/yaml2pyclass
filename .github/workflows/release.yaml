@@ -28,4 +28,4 @@ jobs:
             - add upload to PyPI
             - add pre-commit hooks
           draft: false
-          prerelease: true
+          prerelease: false

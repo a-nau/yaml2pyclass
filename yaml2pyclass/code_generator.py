@@ -11,7 +11,6 @@ import yaml
 
 @dataclass
 class CodeGenerator:
-
     @classmethod
     def from_yaml(cls, config_file: str) -> CodeGenerator:
         if not os.path.exists(config_file):
@@ -22,7 +21,11 @@ class CodeGenerator:
 
         cls._update_code(data)
 
-        old_fields = list([value for key, value in getmembers(cls) if key == '__dataclass_fields__'][0].keys())
+        old_fields = list(
+            [value for key, value in getmembers(cls) if key == "__dataclass_fields__"][
+                0
+            ].keys()
+        )
         dummy_data = {field: None for field in old_fields}
 
         c = cls(**dummy_data)
@@ -50,8 +53,11 @@ class CodeGenerator:
         code_file = Path(inspect.getfile(cls))
         lines = code_file.read_text().split("\n")
 
-        start_pos_list = [idx for idx, line in enumerate(lines) if
-                          ("class" in line and cls.__name__ in line and "Class" not in line)]
+        start_pos_list = [
+            idx
+            for idx, line in enumerate(lines)
+            if ("class" in line and cls.__name__ in line and "Class" not in line)
+        ]
         if len(start_pos_list) != 1:
             raise ValueError("Malformed config file! Cannot modify file!")
 
@@ -67,12 +73,14 @@ class CodeGenerator:
             lines.pop(pos)
 
         # add new keys
-        lines[pos:pos] = [indentation + line for line in cls._create_code(data, indentation)] + [""]
+        lines[pos:pos] = [
+            indentation + line for line in cls._create_code(data, indentation)
+        ] + [""]
 
         # add import
         cls._add_import(lines)
 
-        code_file.write_text('\n'.join(lines))
+        code_file.write_text("\n".join(lines))
 
     @classmethod
     def _add_import(cls, lines: List[str]) -> None:
@@ -93,7 +101,12 @@ class CodeGenerator:
         for key in dict_keys:
             lines.append(f"@dataclasses.dataclass")
             lines.append(f"class {cls._to_class_name(key)}:")
-            lines.extend([indentation + line for line in cls._create_code(data[key], indentation)])
+            lines.extend(
+                [
+                    indentation + line
+                    for line in cls._create_code(data[key], indentation)
+                ]
+            )
             lines.append(f"")
 
         for key, value in data.items():
@@ -106,4 +119,4 @@ class CodeGenerator:
 
     @staticmethod
     def _to_class_name(key: str) -> str:
-        return ''.join(x.title() for x in key.split('_')) + "Class"
+        return "".join(x.title() for x in key.split("_")) + "Class"

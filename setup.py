@@ -7,7 +7,8 @@ import setuptools
 
 # Package meta-data.
 NAME = "yaml2pyclass"
-DESCRIPTION = "Code generator that produces a Python class from a YAML input file. Can be used to facilitate code completion for config objects. "
+DESCRIPTION = "Code generator that produces a Python class from a YAML input file. " \
+              "Can be used to facilitate code completion for config objects. "
 LONG_DESCRIPTION_CONTENT_TYPE = "text/markdown"
 URL = "https://github.com/a-nau/yaml2pyclass"
 EMAIL = "alex.code@mail.com"
@@ -15,9 +16,7 @@ AUTHOR = "Alexander Naumann"
 REQUIRES_PYTHON = ">=3.7.0"
 
 # Package requirements.
-base_packages = [
-    "pyyaml"
-]
+base_packages = ["pyyaml"]
 
 dev_packages = base_packages + [
     "black>=20.1.0",
@@ -26,7 +25,7 @@ dev_packages = base_packages + [
     "pre-commit>=2.9.2",
     "pytest>=4.5.0",
     "pytest-cov>=2.6.1",
-    "pyupgrade>=3.2.0"
+    "pyupgrade>=3.2.0",
 ]
 
 docs_packages = [
@@ -39,14 +38,14 @@ docs_packages = [
     "mkdocs-literate-nav>=0.4.1",
     "mkdocs-material>=8.1.11",
     "mkdocstrings[python]>=0.19.0",
-    'pytkdocs[numpy-style]>=0.5.0',
+    "pytkdocs[numpy-style]>=0.5.0",
     "ipython_genutils>=0.1.0",
     "mkdocs-jupyter>=0.20.0",
     "mkdocs-bibtex==2.8.1",
     "nbconvert==6.4.2",
     "numpydoc==1.2",
     "spacy==3.2.2",
-    "jinja2==3.0.3"
+    "jinja2==3.0.3",
 ]
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -94,5 +93,5 @@ setuptools.setup(
         "Programming Language :: Python :: Implementation :: CPython",
         "Programming Language :: Python :: Implementation :: PyPy",
     ],
-    ext_modules=[]
+    ext_modules=[],
 )

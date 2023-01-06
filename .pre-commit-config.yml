@@ -34,9 +34,3 @@ repos:
         language: python
         types: [python]
         entry: mypy
-
-      - id: pyupgrade
-        name: pyupgrade
-        language: python
-        types: [ python ]
-        entry: pyupgrade --py38-plus

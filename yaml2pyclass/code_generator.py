@@ -13,7 +13,7 @@ import yaml
 class CodeGenerator:
 
     @classmethod
-    def from_yaml(cls, config_file: str):
+    def from_yaml(cls, config_file: str) -> CodeGenerator:
         if not os.path.exists(config_file):
             raise FileNotFoundError(f"Could not find YAML file at {config_file}")
         with open(config_file, "r") as file:
@@ -31,7 +31,7 @@ class CodeGenerator:
         return c
 
     @classmethod
-    def _update_data(cls, obj: object, data: Dict[str, Any]):
+    def _update_data(cls, obj: object, data: Dict[str, Any]) -> object:
 
         obj.__dict__.clear()
         obj.__dict__.update(data)
@@ -46,7 +46,7 @@ class CodeGenerator:
         return obj
 
     @classmethod
-    def _update_code(cls, data: Dict[str, Any]):
+    def _update_code(cls, data: Dict[str, Any]) -> None:
         code_file = Path(inspect.getfile(cls))
         lines = code_file.read_text().split("\n")
 
@@ -75,7 +75,7 @@ class CodeGenerator:
         code_file.write_text('\n'.join(lines))
 
     @classmethod
-    def _add_import(cls, lines: List[str]):
+    def _add_import(cls, lines: List[str]) -> None:
         pattern = r"^\s*import\s*dataclasses\s*$"
         if any(re.match(pattern=pattern, string=line) for line in lines):
             return
@@ -105,5 +105,5 @@ class CodeGenerator:
         return lines
 
     @staticmethod
-    def _to_class_name(key: str):
+    def _to_class_name(key: str) -> str:
         return ''.join(x.title() for x in key.split('_')) + "Class"

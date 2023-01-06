@@ -12,7 +12,7 @@ import yaml
 @dataclass
 class CodeGenerator:
     @classmethod
-    def from_yaml(cls, config_file: str) -> CodeGenerator:
+    def from_yaml(cls, config_file: str) -> "CodeGenerator":
         if not os.path.exists(config_file):
             raise FileNotFoundError(f"Could not find YAML file at {config_file}")
         with open(config_file, "r") as file:
@@ -93,13 +93,13 @@ class CodeGenerator:
     @classmethod
     def _create_code(cls, data: Dict[str, Any], indentation: str) -> List[str]:
         if len(data.keys()) == 0:
-            return [f"pass"]
+            return ["pass"]
 
         dict_keys = [key for key, value in data.items() if isinstance(value, dict)]
 
         lines = []
         for key in dict_keys:
-            lines.append(f"@dataclasses.dataclass")
+            lines.append("@dataclasses.dataclass")
             lines.append(f"class {cls._to_class_name(key)}:")
             lines.extend(
                 [
@@ -107,7 +107,7 @@ class CodeGenerator:
                     for line in cls._create_code(data[key], indentation)
                 ]
             )
-            lines.append(f"")
+            lines.append("")
 
         for key, value in data.items():
             if key in dict_keys:

@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yaml2pyclass-mecher"
+version = "0.1.8"
+authors = [
+  { name="Maksim Cherniak", email="maximchernyak98@gmail.com" },
+]
+description = "Add option to choose final class in config"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+dependencies = ["pyyaml==6.0"] 
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]

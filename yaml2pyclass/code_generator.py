@@ -113,7 +113,11 @@ class CodeGenerator:
             if key in dict_keys:
                 lines.append(f"{str(key)}: {cls._to_class_name(key)}")
             else:
-                lines.append(f"{str(key)}: {type(value).__name__}")
+                if isinstance(value, str) and 'type___' in value:
+                    new_type = value.split('type___')[1]
+                    lines.append(f"{str(key)}: {new_type}")
+                else:
+                    lines.append(f"{str(key)}: {type(value).__name__}")
 
         return lines
 

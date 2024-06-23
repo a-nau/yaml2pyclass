@@ -3,8 +3,8 @@ on:
   push:
     # Sequence of patterns matched against refs/tags
     tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
-      - 'latest'
+      - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
+      - "latest"
 
 name: release
 
@@ -24,8 +24,6 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           body: |
-            Upload to PyPI
-            - add upload to PyPI
-            - add pre-commit hooks
+            Update PyPI upload
           draft: false
           prerelease: false
